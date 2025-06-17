@@ -45,12 +45,13 @@ regex = "1.7.3"
 
 [dev-dependencies]
 anyhow = "1.0.69"
-criterion = "0.6.0"
+criterion = { version = "0.6.0", features = ["async_tokio"] }
 ctrlc = { workspace = true }
 insta = { version = "1.39.0", features = ["json"] }
 itertools = "0.14.0"
 netns-rs = "0.1.0"
 regex = "1.7.3"
+rstest = "0.25"
 clap = { version = "4.5.4", features = ["derive"] }
 reqwest = { version = "0.12.9", default-features = false, features = [
   "json",
@@ -63,6 +64,10 @@ tracing-subscriber = { workspace = true }
 
 [[bench]]
 name = "bandwidth"
+harness = false
+
+[[bench]]
+name = "timer"
 harness = false
 
 [features]
